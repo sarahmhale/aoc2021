@@ -1,7 +1,13 @@
 import { parseInput } from "../utils/parseInput"
 
-export const run = () => {
-  console.log( parseInput({split: false}))
+let increases: number = 0
 
- return 'hello'
+export const run = () => {
+  const input: any = parseInput({ split: { delimiter: '\n' } })
+  input.map((curr: number, i: number) => {
+    if (i === 0) return
+    if (curr > input[i - 1]) increases++
+  })
+
+  return increases
 }

@@ -21,7 +21,7 @@ interface SplitOptions<T> {
   if (split === false) return input;
 
   const splitted = input.split(split?.delimiter ?? '\n');
-  const mapper = split?.mapper;
+  const mapper = split?.mapper
 
   return mapper === false
     ? splitted
